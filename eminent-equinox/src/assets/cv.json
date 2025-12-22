@@ -1,0 +1,21 @@
+{
+  "name": "Pedro Barbosa",
+  "headline": "Junior Developer (Angular + Spring) focado em entregar features ponta-a-ponta.",
+  "location": "Portugal",
+  "links": [
+    { "label": "GitHub", "href": "https://github.com/pedr0147" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/pedro-barbosa-197b44347/" }
+  ],
+  "highlights": [
+    "Angular + Spring: REST, validação, autenticação",
+    "SQL e modelação de dados",
+    "CI/CD e deploy (GitHub → Cloudflare Pages)"
+  ],
+  "projects": [
+    {
+      "name": "Website CV",
+      "desc": "CV como fonte única de dados + site estático rápido + página de case study.",
+      "tags": ["Astro", "CI/CD"]
+    }
+  ]
+}

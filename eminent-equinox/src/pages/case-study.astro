@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main style="max-width: 860px; margin: 0 auto; padding: 56px 20px;">
+    <h1>Case study</h1>
+    <p>
+      Este site é gerado a partir de uma única fonte de dados (<code>cv.json</code>), com deploy automático via Cloudflare Pages.
+    </p>
+    <h2>Decisões</h2>
+    <ul>
+      <li><strong>Astro</strong> para performance e simplicidade num site principalmente de conteúdo.</li>
+      <li><strong>CV como dados</strong> para evitar duplicação e facilitar evolução.</li>
+      <li><strong>CI/CD</strong> para garantir que cada push publica uma versão reprodutível.</li>
+    </ul>
+
+    <h2>Próximos passos</h2>
+    <ul>
+      <li>Formulário de contacto com proteção anti-spam e rate limiting.</li>
+      <li>Melhorias de acessibilidade e métricas (Lighthouse).</li>
+    </ul>
+  </main>
+</Layout>
