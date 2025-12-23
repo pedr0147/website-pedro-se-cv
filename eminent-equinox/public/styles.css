@@ -25,14 +25,10 @@ body {
     var(--bg);
   line-height: 1.6;
 }
-
-
-
 a { color: var(--text); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
-/* Top nav */
 .topbar {
   position: sticky;
   top: 0;
@@ -76,7 +72,6 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 
   background: linear-gradient(135deg, rgba(120, 170, 255, 0.24), rgba(215, 130, 255, 0.20));
   color: var(--text);
 }
-/* Hero */
 .hero {
   margin-top: 18px;
   display: grid;
@@ -112,7 +107,6 @@ h1 { margin: 0; font-size: 44px; letter-spacing: -0.03em; line-height: 1.15; }
 .linkBtn.secondary { color: var(--muted); }
 .kpis { margin: 0; padding-left: 18px; color: var(--muted); }
 .kpis li { margin: 8px 0; }
-/* Sections */
 .section { margin-top: 22px; padding: 18px; }
 .section h2 {
   margin: 0 0 12px;
@@ -148,9 +142,7 @@ h1 { margin: 0; font-size: 44px; letter-spacing: -0.03em; line-height: 1.15; }
 .itemHeader span { font-size: 12px; color: var(--muted2); }
 .bullets { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
 .bullets li { margin: 8px 0; }
-/* Footer */
 footer { margin-top: 26px; padding: 16px 2px; color: var(--muted2); font-size: 12px; }
-/* Responsive */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr; }
