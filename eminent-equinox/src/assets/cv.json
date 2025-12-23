@@ -1,21 +1,110 @@
 {
-  "name": "Pedro Barbosa",
-  "headline": "Junior Developer (Angular + Spring) focado em entregar features ponta-a-ponta.",
-  "location": "Portugal",
-  "links": [
-    { "label": "GitHub", "href": "https://github.com/pedr0147" },
-    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/pedro-barbosa-197b44347/" }
+  "person": {
+    "firstName": "Pedro",
+    "lastName": "Barbosa",
+    "fullName": "Pedro Barbosa",
+    "location": null,
+    "email": null,
+    "phone": null,
+    "links": {
+      "github": "https://github.com/pedr0147",
+      "linkedin": null,
+      "website": null
+    }
+  },
+  "headline": null,
+  "summary": null,
+  "education": [
+    {
+      "program": "Computer Systems Programming & Management",
+      "institution": "Professional School of Valongo",
+      "startYear": 2019,
+      "endYear": 2021,
+      "notes": null
+    },
+    {
+      "program": "IT & Telecommunications Engineering",
+      "institution": "School of Technology and Management of Lamego (ESTGL)",
+      "startYear": 2022,
+      "endYear": 2025,
+      "notes": null
+    }
   ],
-  "highlights": [
-    "Angular + Spring: REST, validação, autenticação",
-    "SQL e modelação de dados",
-    "CI/CD e deploy (GitHub → Cloudflare Pages)"
+  "experience": [
+    {
+      "company": "PetrovNetwork",
+      "role": "Internship",
+      "employmentType": "Internship",
+      "duration": "4 months",
+      "year": 2021,
+      "highlights": [],
+      "technologies": []
+    },
+    {
+      "company": "Nau-21",
+      "role": "Junior Full-stack Developer",
+      "employmentType": "Contract",
+      "duration": "6 months",
+      "year": null,
+      "highlights": [],
+      "technologies": ["Angular", "SpringBoot"]
+    },
+    {
+      "company": "EF-Tecnologias",
+      "role": null,
+      "employmentType": null,
+      "duration": null,
+      "year": null,
+      "highlights": [
+        "REST APIs with SpringBoot",
+        "Database work and performance focus (e.g., caching/query tuning)",
+        "CI/CD pipelines (e.g., Jenkins)"
+      ],
+      "technologies": ["SpringBoot", "SQL", "Jenkins", "Docker"]
+    }
   ],
   "projects": [
     {
-      "name": "Website CV",
-      "desc": "CV como fonte única de dados + site estático rápido + página de case study.",
-      "tags": ["Astro", "CI/CD"]
+      "name": "Callix",
+      "type": "Real-time communication platform",
+      "description": "Real-time communication platform built with MERN using WebRTC, Socket.IO and PeerJS.",
+      "features": [
+        "WebRTC real-time communication",
+        "JWT authentication",
+        "HTTPS/CORS",
+        "UI/UX with TailwindCSS"
+      ],
+      "technologies": [
+        "MongoDB",
+        "Express",
+        "React",
+        "Node.js",
+        "WebRTC",
+        "Socket.IO",
+        "PeerJS",
+        "JWT",
+        "TailwindCSS"
+      ],
+      "links": {
+        "github": "https://github.com/pedr0147/Callix",
+        "liveDemo": null
+      },
+      "notes": {
+        "builtBy": "self",
+        "finalGrade": 17,
+        "gradeScale": "0-20"
+      }
     }
-  ]
+  ],
+  "skills": {
+    "languages": ["Java", "JavaScript", "Python", "SQL", "TypeScript"],
+    "frameworks": ["SpringBoot", "Angular", "React", "Express"],
+    "databases": ["MySQL", "MongoDB", "SQLServer", "PostgreSQL"],
+    "tools": ["Git", "XAMPP", "cPanel", "Docker", "Jenkins"]
+  },
+  "metadata": {
+    "source": "CV PDF",
+    "schemaVersion": "1.0",
+    "lastUpdated": "2025-12-22"
+  }
 }

@@ -1,81 +1,257 @@
----
-import Layout from '../layouts/Layout.astro';
-import cv from '../assets/cv.json';
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<Layout>
-  <main class="wrap">
-    <header class="hero">
-      <div>
-        <h1>{cv.name}</h1>
-        <p class="headline">{cv.headline}</p>
-        <p class="meta">{cv.location}</p>
-
-        <nav class="links">
-          {cv.links.map((l) => (
-            <a class="link" href={l.href} target={l.href.startsWith('http') ? "_blank" : undefined} rel="noreferrer">
-              {l.label}
-            </a>
-          ))}
+    <title>Pedro Barbosa - Junior Developer</title>
+    <!-- Social preview (optional) -->
+    <meta property="og:title" content="Pedro Barbosa - Junior Developer" />
+    <meta property="og:description" content="Projects, experience and contact." />
+    <meta property="og:type" content="website" />
+	<link rel="stylesheet" href="/styles.css"/>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar" role="banner">
+  		<div class="topbar-inner">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="chip" href="#projects">Projects</a>
+          <a class="chip" href="#experience">Experience</a>
+          <a class="chip" href="#skills">Skills</a>
+          <a class="chip" href="#case-study">Case study</a>
+		  <a class="chip" href="#cv">CV</a>
+          <a class="chip primary" href="#contact">Contact</a>
         </nav>
-      </div>
+		</div>
+      </header>
+      <main role="main">
+        <section class="hero" aria-label="Intro">
+          <div class="panel heroMain">
+            <h1>Pedro Barbosa</h1>
+            <p class="headline">
+              A Junior Full-stack Developer focused on building reliable features end-to-end: clean APIs, solid data and beautiful UI.
+            </p>
+            <p class="meta">Portugal</p>
 
-      <div class="card">
-        <h2>Destaques</h2>
-        <ul>
-          {cv.highlights.map((h) => <li>{h}</li>)}
-        </ul>
-      </div>
-    </header>
-
-    <section class="section">
-      <h2>Projetos</h2>
-      <div class="grid">
-        {cv.projects.map((p) => (
-          <article class="proj">
-            <div class="projTop">
-              <h3>{p.name}</h3>
-              <div class="tags">
-                {p.tags?.map((t) => <span class="tag">{t}</span>)}
-              </div>
+            <div class="links" aria-label="Profile links">
+              <a class="linkBtn" href="https://github.com/pedr0147" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="linkBtn secondary" href="https://www.linkedin.com/in/pedro-barbosa-197b44347/" aria-disabled="true">LinkedIn</a>
+              <a class="linkBtn secondary" href="mailto:pedrobarbosa147@gmail.com" aria-disabled="true">Email</a>
             </div>
-            <p>{p.desc}</p>
-          </article>
-        ))}
-      </div>
-    </section>
+          </div>
 
-    <section class="section">
-      <h2>Case study</h2>
-      <p>
-        Como foi feito, decisões e trade-offs: <a href="/case-study">ler</a>.
-      </p>
-    </section>
-  </main>
-</Layout>
+          <aside class="panel heroAside" aria-label="Highlights">
+            <h2 style="margin:0 0 10px; font-size:16px;">Highlights</h2>
+            <ul class="kpis">
+              <li>Spring Boot REST APIs + DB work (performance mindset)</li>
+              <li>CI/CD experience (Jenkins) + Docker basics</li>
+              <li>Front-end contributions (Angular, lazy loading & interceptors)</li>
+            </ul>
+          </aside>
+        </section>
 
-<style>
-  .wrap { max-width: 980px; margin: 0 auto; padding: 56px 20px; }
-  .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start; }
-  h1 { font-size: 44px; margin: 0; letter-spacing: -0.02em; }
-  .headline { margin: 10px 0 0; font-size: 18px; opacity: .9; line-height: 1.6; }
-  .meta { margin: 8px 0 0; opacity: .7; }
-  .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
-  .link { text-decoration: none; border: 1px solid rgba(0,0,0,.12); padding: 8px 10px; border-radius: 10px; }
-  .link:hover { border-color: rgba(0,0,0,.28); }
-  .card { border: 1px solid rgba(0,0,0,.12); border-radius: 16px; padding: 16px; }
-  .section { margin-top: 34px; }
-  .grid { display: grid; gap: 14px; }
-  .proj { border: 1px solid rgba(0,0,0,.12); border-radius: 16px; padding: 16px; }
-  .projTop { display:flex; justify-content: space-between; gap: 12px; align-items: baseline; }
-  h2 { margin: 0 0 12px; font-size: 20px; }
-  h3 { margin: 0; font-size: 18px; }
-  p { margin: 8px 0 0; line-height: 1.6; opacity: .9; }
-  ul { margin: 0; padding-left: 18px; line-height: 1.8; }
-  .tags { display:flex; gap: 8px; flex-wrap: wrap; }
-  .tag { font-size: 12px; border: 1px solid rgba(0,0,0,.12); padding: 4px 8px; border-radius: 999px; opacity: .85; }
+        <section id="projects" class="panel section" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
 
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; }
-  }
-</style>
+          <div class="grid" role="list">
+            <article class="card" role="listitem">
+              <div class="itemHeader">
+                <strong>Callix</strong>
+                <span>Real-time communication · WebRTC</span>
+              </div>
+
+              <p>
+                Real-time communication platform with authentication and real-time signaling.
+                Built to understand trade-offs around latency, state, and security.
+              </p>
+
+              <div class="tagRow" aria-label="Tech tags">
+                <span class="tag">WebRTC</span>
+                <span class="tag">Socket.IO</span>
+                <span class="tag">PeerJS</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">React</span>
+              </div>
+
+              <p style="margin-top:12px;">
+                <a class="linkBtn" href="https://github.com/pedr0147/Callix" target="_blank" rel="noreferrer">Repository</a>
+                <a class="linkBtn secondary" aria-disabled="true">Live demo (On progress)</a>
+              </p>
+            </article>
+
+            <article class="card" role="listitem">
+              <div class="itemHeader">
+                <strong>CV Website</strong>
+                <span>Astro · Cloudflare Pages</span>
+              </div>
+
+              <p>
+                This website. Built as a small product: consistent data model, clean structure,
+                and a case study explaining decisions and trade-offs.
+              </p>
+
+              <div class="tagRow">
+                <span class="tag">Astro</span>
+                <span class="tag">Static</span>
+                <span class="tag">CI/CD</span>
+              </div>
+              <p style="margin-top:12px;">
+                <a class="linkBtn" href="#case-study">Read case study</a>
+              </p>
+            </article>
+          </div>
+        </section>
+        <section id="experience" class="panel section" aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience</h2>
+          <div class="timeline">
+            <article class="card">
+              <div class="itemHeader">
+                <strong>EF-Tecnologias - Junior Full-stack Developer</strong>
+                <span>Spring Boot · Databases · CI/CD (2025)</span>
+              </div>
+              <ul class="bullets">
+                <li>Built/maintained REST APIs with Spring Boot, Swagger.</li>
+                <li>Worked on database topics with a performance mindset.</li>
+                <li>Contributed to delivery automation (e.g., Jenkins pipelines) and Docker usage.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="itemHeader">
+                <strong>Nau-21 - Junior Full-stack Developer</strong>
+                <span>Angular · Spring Boot (6 months, 2021)</span>
+              </div>
+              <ul class="bullets">
+                <li>Contributed to Angular UI work and Spring Boot API development.</li>
+                <li>Worked on database-related tasks and small end-to-end changes.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="itemHeader">
+                <strong>PetrovNetwork - Internship</strong>
+                <span>Web (4 months, 2021)</span>
+              </div>
+              <ul class="bullets">
+				<li>Developed and maintained many websites with WordPress</li>
+                <li>Worked with deployment tooling (cPanel/XAMPP).</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <section id="skills" class="panel section" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Languages</h3>
+              <p>Java · TypeScript · JavaScript · Python · SQL · C++ · VB.NET · C#</p>
+            </div>
+            <div class="card">
+              <h3>Frameworks</h3>
+              <p>Spring Boot · Angular · React · Express</p>
+            </div>
+            <div class="card">
+              <h3>Databases</h3>
+              <p>PostgreSQL · MySQL · MongoDB · SQL Server · Oracle · H2-Console</p>
+            </div>
+            <div class="card">
+              <h3>Tools</h3>
+              <p>Git · Docker · Jenkins · XAMPP · cPanel · Swagger · Postman</p>
+            </div>
+          </div>
+        </section>
+        <section id="case-study" class="panel section" aria-labelledby="case-title">
+          <h2 id="case-title">Case study</h2>
+          <p>
+            Don’t write “I used X”. Write “I chose X because… and accepted these trade-offs”.
+          </p>
+          <div class="grid" style="margin-top: 12px;">
+            <article class="card">
+              <h3>Decisions</h3>
+              <ul class="bullets">
+                <li><strong>Astro</strong> for performance and simplicity (content-first site).</li>
+                <li><strong>Single source of truth</strong> (CV as structured data).</li>
+                <li><strong>Automated deploy</strong> (every push is reproducible).</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Next steps</h3>
+              <ul class="bullets">
+                <li>Add a contact endpoint with basic abuse protection (rate limit + validation).</li>
+                <li>Run Lighthouse and document metrics and improvements.</li>
+                <li>Write one deep dive on Callix (real-time trade-offs & security).</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+		<section id="cv" aria-labelledby="cv-title">
+		  <h2 id="cv-title">CV (PDF)</h2>
+
+		  <p>
+		    <a href="/cv.pdf" target="_blank" rel="noreferrer">Open in a new tab</a>
+		    ·
+		    <a href="/cv.pdf" download>Download</a>
+		  </p>
+	  
+		  <div style="border:1px solid rgba(0,0,0,.12); border-radius:16px; overflow:hidden;">
+		    <iframe
+		      src="/cv.pdf#view=FitH"
+		      title="Pedro Barbosa CV PDF preview"
+		      loading="lazy"
+		      style="width:100%; height:70vh; border:0;"
+		    ></iframe>
+		  </div>
+	  
+		  <p style="opacity:.75; margin-top:10px;">
+			<a href="#cv"></a>
+		    If the preview doesn’t load, use the links above.
+		  </p>
+		</section>
+
+        <section id="contact" class="panel section" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact</h2>
+          <p>If you want someone who can ship end-to-end features with solid engineering, let’s talk.</p>
+		  <form method="POST" action="https://formspree.io/f/xnjaooll?next=/thanks" style="margin-top:12px;">
+		<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+		  <div class="grid" style="grid-template-columns: 1fr 1fr;">
+		    <label class="card" style="display:block;">
+		      <strong>Name</strong><br />
+		      <input name="name" required autocomplete="name" style="width:100%; margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(0,0,0,0.15); color: white;" />
+		    </label>
+		    <label class="card" style="display:block;">
+		      <strong>Email</strong><br />
+		      <input type="email" name="email" required autocomplete="email" style="width:100%; margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(0,0,0,0.15); color: white;" />
+		    </label>
+		  </div>
+		  <label class="card" style="display:block; margin-top:14px;">
+		    <strong>Message</strong><br />
+		    <textarea name="message" required rows="6" style="width:100%; margin-top:8px; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background: rgba(0,0,0,0.15); color: white;"></textarea>
+		  </label>
+		  <div class="form-actions">
+		  	<button class="chip primary" type="submit" style="margin-top:12px;">
+		  	  Send message
+		  	</button>
+		  </div>
+		</form>
+          <div style="margin-top: 12px;">
+            <div class="card quick-links">
+              <h3>Quick links</h3>
+              <p>
+                <a class="linkBtn" href="https://github.com/pedr0147" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="linkBtn secondary" href="https://www.linkedin.com/in/pedro-barbosa-197b44347/" aria-disabled="true">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer role="contentinfo">
+        <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <span>© 2025 Pedro Barbosa</span>
+          <span>Built with a performance-first mindset.</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
