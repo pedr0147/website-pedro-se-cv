@@ -11,6 +11,12 @@
 	<link rel="stylesheet" href="/styles.css"/>
   </head>
   <body>
+    <canvas id="bgCode" aria-hidden="true"></canvas>
+    <slot/>
+    <script type="module">
+      import { startBgCode } from "/bgCode.js";
+    startBgCode();
+  </script>
     <div class="wrap">
       <header class="topbar" role="banner">
   		<div class="topbar-inner">

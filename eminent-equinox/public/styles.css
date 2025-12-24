@@ -1,7 +1,7 @@
 :root {
   --bg: #0b0f17;
   --panel: rgba(255,255,255,0.06);
-  --panel2: rgba(255,255,255,0.04);
+  --panel2: rgba(255,255,255,0.095);
   --border: rgba(255,255,255,0.12);
   --text: rgba(255,255,255,0.92);
   --muted: rgba(255,255,255,0.70);
@@ -18,12 +18,47 @@ body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   color: var(--text);
+  background: transparent;
+  position: relative;
+}
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
   background:
-    linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.00) 45%),
-    radial-gradient(900px 600px at 10% 10%, rgba(180,120,255,0.10), transparent 55%),
-    radial-gradient(900px 600px at 90% 0%, rgba(90,160,255,0.10), transparent 55%),
+    radial-gradient(900px 600px at 15% 10%, rgba(180,120,255,0.18), transparent 60%),
+    radial-gradient(900px 600px at 85% 0%, rgba(90,160,255,0.16), transparent 55%),
+    radial-gradient(700px 500px at 60% 90%, rgba(120,255,200,0.10), transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.00) 45%),
     var(--bg);
-  line-height: 1.6;
+  animation: auroraShift 14s ease-in-out infinite alternate;
+}
+body::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .10;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 1px, transparent 1px 4px);
+  mix-blend-mode: overlay;
+  animation: grainMove 8s steps(10) infinite;
+}
+@keyframes auroraShift{
+  0%   { filter: hue-rotate(0deg) saturate(1); transform: scale(1); }
+  100% { filter: hue-rotate(18deg) saturate(1.1); transform: scale(1.02); }
+}
+
+@keyframes grainMove{
+  0%   { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-2%, 1.5%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  body::before, body::after { animation: none !important; }
 }
 a { color: var(--text); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -84,7 +119,7 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 
   height: 100%;
 }
 .panel {
-  background: rgba(255,255,255,0.075);;
+  background: rgba(255,255,255,0.095);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -123,7 +158,7 @@ h1 { margin: 0; font-size: 44px; letter-spacing: -0.03em; line-height: 1.15; }
   padding: 16px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.07);
 }
 .card h3 { margin: 0; font-size: 16px; }
 .card p { margin: 8px 0 0; color: var(--muted); }
@@ -161,3 +196,15 @@ footer { margin-top: 26px; padding: 16px 2px; color: var(--muted2); font-size: 1
   display: flex;
   justify-content: center;
 }
+#bgCode{
+  position: fixed;
+  inset: 0;
+  z-index: -1;          /* atrás do conteúdo */
+  pointer-events: none;
+  opacity: .22;         /* baixa para não distrair */
+  mix-blend-mode: screen;
+}
+@media (prefers-reduced-motion: reduce){
+  #bgCode{ display:none; }
+}
+
